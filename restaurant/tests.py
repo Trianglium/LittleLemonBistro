@@ -3,6 +3,21 @@ from .models import Booking, Menu
 from .menu_data import menu_item_data
 
 
+# Book Page
+class BookPageTests(SimpleTestCase):
+    def test_url_pattern(self):
+        response = self.client.get("/book/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_url_name(self):
+        response = self.client.get(reverse("book"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_template_name(self):
+        response = self.client.get(reverse("book"))
+        self.assertTemplateUsed(response, "book.html")
+
+# Booking Model
 class BookingModelTests(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -20,7 +35,7 @@ class BookingModelTests(TestCase):
     def test_comment(self):
         self.assertEquals(self.book.comment, "Booking Test")
 
-
+# Menu Model
 class MenuModelTests(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -35,3 +50,19 @@ class MenuModelTests(TestCase):
     
     def test_menu_item_description(self):
         self.assertEquals(self.menu_item.menu_item_description, "Our famous Greek salad of crispy lettuce, peppers, olives, and our Chicago-style feta cheese. Garnished with crispy onion and salty capers.")
+
+
+# Menu Page
+class MenuPageTests(SimpleTestCase):
+    def test_url_pattern(self):
+        response = self.client.get("/menu/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_url_name(self):
+        response = self.client.get(reverse("menu"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_template_name(self):
+        response = self.client.get(reverse("menu"))
+        self.assertTemplateUsed(response, "menu.html")
+
