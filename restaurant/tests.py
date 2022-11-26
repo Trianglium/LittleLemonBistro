@@ -66,3 +66,18 @@ class MenuPageTests(SimpleTestCase):
         response = self.client.get(reverse("menu"))
         self.assertTemplateUsed(response, "menu.html")
 
+# Menu Item Detail Page
+class MenuItemPageTests(SimpleTestCase):
+    def test_url_pattern(self):
+        response = self.client.get("/menu_item/1/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_url_name(self):
+        response = self.client.get(reverse("menu_item"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_template_name(self):
+        response = self.client.get(reverse("menu_item"))
+        self.assertTemplateUsed(response, "menu_item.html")
+
+
