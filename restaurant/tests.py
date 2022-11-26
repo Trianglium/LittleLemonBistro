@@ -17,12 +17,15 @@ class BookPageTests(SimpleTestCase):
         response = self.client.get(reverse("book"))
         self.assertTemplateUsed(response, "book.html")
 
+
 # Booking Model
 class BookingModelTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.book = Booking.objects.create(first_name="Jane", last_name="Doe", guest_number=1, comment="Booking Test")
-    
+        cls.book = Booking.objects.create(
+            first_name="Jane", last_name="Doe", guest_number=1, comment="Booking Test"
+        )
+
     def test_first_name(self):
         self.assertEquals(self.book.name, "Jane")
 
@@ -35,21 +38,29 @@ class BookingModelTests(TestCase):
     def test_comment(self):
         self.assertEquals(self.book.comment, "Booking Test")
 
+
 # Menu Model
 class MenuModelTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.data = menu_item_data[0]
-        cls.menu_item = Menu.objects.create(name="Greek salad", price=12, menu_item_description="Our famous Greek salad of crispy lettuce, peppers, olives, and our Chicago-style feta cheese. Garnished with crispy onion and salty capers.")
+        cls.menu_item = Menu.objects.create(
+            name="Greek salad",
+            price=12,
+            menu_item_description="Our famous Greek salad of crispy lettuce, peppers, olives, and our Chicago-style feta cheese. Garnished with crispy onion and salty capers.",
+        )
 
     def test_name(self):
         self.assertEquals(self.menu_item.name, "Greek salad")
-    
+
     def test_price(self):
         self.assertEquals(self.menu_item.price, 12)
-    
+
     def test_menu_item_description(self):
-        self.assertEquals(self.menu_item.menu_item_description, "Our famous Greek salad of crispy lettuce, peppers, olives, and our Chicago-style feta cheese. Garnished with crispy onion and salty capers.")
+        self.assertEquals(
+            self.menu_item.menu_item_description,
+            "Our famous Greek salad of crispy lettuce, peppers, olives, and our Chicago-style feta cheese. Garnished with crispy onion and salty capers.",
+        )
 
 
 # Menu Page
@@ -65,6 +76,7 @@ class MenuPageTests(SimpleTestCase):
     def test_template_name(self):
         response = self.client.get(reverse("menu"))
         self.assertTemplateUsed(response, "menu.html")
+
 
 # Menu Item Detail Page
 class MenuItemPageTests(SimpleTestCase):
@@ -95,6 +107,7 @@ class HomePageTests(SimpleTestCase):
         response = self.client.get(reverse("home"))
         self.assertTemplateUsed(response, "index.html")
 
+
 # About Page
 class AboutPageTests(SimpleTestCase):
     def test_url_pattern(self):
@@ -108,6 +121,3 @@ class AboutPageTests(SimpleTestCase):
     def test_template_name(self):
         response = self.client.get(reverse("about"))
         self.assertTemplateUsed(response, "about.html")
-
-
-
