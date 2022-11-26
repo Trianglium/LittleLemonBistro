@@ -81,3 +81,33 @@ class MenuItemPageTests(SimpleTestCase):
         self.assertTemplateUsed(response, "menu_item.html")
 
 
+# Home Page
+class HomePageTests(SimpleTestCase):
+    def test_url_pattern(self):
+        response = self.client.get("/home/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_url_name(self):
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_template_name(self):
+        response = self.client.get(reverse("home"))
+        self.assertTemplateUsed(response, "index.html")
+
+# About Page
+class AboutPageTests(SimpleTestCase):
+    def test_url_pattern(self):
+        response = self.client.get("/about/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_url_name(self):
+        response = self.client.get(reverse("about"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_template_name(self):
+        response = self.client.get(reverse("about"))
+        self.assertTemplateUsed(response, "about.html")
+
+
+
