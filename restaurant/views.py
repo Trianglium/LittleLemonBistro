@@ -22,9 +22,9 @@ def book(request):
 
 
 def menu(request):
-    menu_data = Menu.objects.all().order_by('name')
+    menu_data = Menu.objects.all().order_by("name")
     main_data = {"menu": menu_data}
-    return render(request, 'menu.html', {"menu": main_data})
+    return render(request, "menu.html", {"menu": main_data})
 
 
 def display_menu_item(request, pk=None):
