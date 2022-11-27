@@ -120,6 +120,11 @@ USE_TZ = True
 STATIC_URL = "restaurant/static/"
 STATICFILES_DIRS = [
     "restaurant/static",
+    "static/restaurant",
+    "static/admin",
+    "static/restaurant/css",
+    "static/restaurant/img",
+
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
