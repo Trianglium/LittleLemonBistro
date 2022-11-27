@@ -122,8 +122,6 @@ STATICFILES_DIRS = [
     "restaurant/static",
     "static/restaurant",
     "static/admin",
-    "static/restaurant/css",
-    "static/restaurant/img",
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -134,4 +132,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = "/home/jordanbr/littlelemon/media"
 MEDIA_URL = "/media/"
-STATIC_ROOT = "/home/jordanbr/littlelemon/restaurant/static"
+STATIC_ROOT = "/home/jordanbr/littlelemon/static"
