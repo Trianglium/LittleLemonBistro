@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <h1>Menu</h1>
+{% if menu %}
 <!--Begin col-->
 <div class="column">
     {% for item in menu.menu %}
@@ -15,5 +16,6 @@
     </p>
     {% endfor %}
 </div>
+{% endif %}
 <!--End col-->
 {% endblock %}
