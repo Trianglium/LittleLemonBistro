@@ -117,7 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'restaurant/static/'
+STATIC_URL = "restaurant/static/"
 
 STATICFILES_DIRS = [
     "restaurant/static",
@@ -132,4 +132,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = "/home/jordanbr/littlelemon/media"
 MEDIA_URL = "/media/"
-
