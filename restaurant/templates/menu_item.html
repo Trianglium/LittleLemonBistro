@@ -1,5 +1,5 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <section>
    <article>
@@ -27,7 +27,7 @@
          <!--Begin col-->
          <div class="column">
             {% if menu_item.image %}
-            <img src="{{ menu_item.image }}" alt="{{ menu_item.name }}" />
+            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" />
             {% endif %}
 
         </div>
