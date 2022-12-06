@@ -116,11 +116,11 @@ nav.fill ul li a:after {
   margin: 0;
   opacity: 0;
 }
-nav.fill ul li a:hover {
+nav.fill ul li a:hover, a.active {
   color: #fff;
   z-index: 1;
 }
-nav.fill ul li a:hover:after {
+nav.fill ul li a:hover:after, a.active:after {
   z-index: -10;
   animation: fill 1s forwards;
   -webkit-animation: fill 1s forwards;
