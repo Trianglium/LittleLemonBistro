@@ -1,79 +1,83 @@
-import * as React from "react";
-import { Text, View, StyleSheet, Image, useColorScheme } from "react-native";
-import Button from "../components/Button";
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  useColorScheme,
+} from 'react-native';
 
-
-const WelcomeScreen = ({ navigation }) => {
+export default function WelcomeScreen() {
   const colorScheme = useColorScheme();
+
   return (
-    <View 
+    <ScrollView
       style={[
         styles.container,
-        colorScheme === 'dark'
-          ? {backgroundColor: '#fff'}
-          : {backgroundColor: '#121212'},
+        colorScheme === 'light'
+          ? { backgroundColor: '#fff' }
+          : { backgroundColor: '#333333' },
       ]}>
-      <View style={styles.contentContainer}>
-        <Image style={styles.logo} source={require("../assets/little-lemon-logo.png")} />
+      <View style={styles.headerWrapper}>
+        <Image
+          style={styles.image}
+          source={require('./img/logo.png')}
+          resizeMode="cover"
+          accessible={true}
+          accessibilityLabel={'Little Lemon Logo'}
+        />
+
         <Text
           style={[
-            styles.title,
-            colorScheme === 'dark'
-              ? { color: '#000' }
+            styles.headerText,
+            colorScheme === 'light'
+              ? { color: '#333333' }
               : { color: '#EDEFEE' },
           ]}>
-          Little Lemon, your local Mediterranean Bistro
+          Little Lemon
         </Text>
       </View>
-      <Button
-        style={styles.button}
-        onPress={() => {
-          navigation.navigate("Subscribe");
-        }}
-      >
-        Newsletter
-      </Button>
-    </View>
+      <Text
+        style={[
+          styles.regularText,
+          colorScheme === 'light' ? { color: '#333333' } : { color: '#EDEFEE' },
+        ]}>
+        Little Lemon is a charming neighborhood bistro that serves simple food
+        and classic cocktails in a lively but casual environment. We would love
+        to hear your experience with us!
+      </Text>
+    </ScrollView>
   );
-};
-
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    backgroundColor: 'white',
-    justifyContent: 'space-between',
   },
-  contentContainer: {
-    flex: 1,
+  headerWrapper: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    margin: 10,
   },
-  logo: {
-    height: 200,
-    width: 300,
-    resizeMode: "contain",
-  },
-  button: {
-    padding: 10,
-    marginVertical: 8,
-    margin: 100,
-    backgroundColor: '#495E57',
-    borderColor: '#495E57',
-    color: '#fff',
+  headerText: {
+    paddingRight: 10,
+    paddingLeft: 20,
+    paddingTop: 30,
+    paddingBottom: 10,
+    fontSize: 30,
+    color: '#EDEFEE',
     textAlign: 'center',
-    fontSize: 18,
-    borderRadius: 0,
   },
-  title: {
-    marginTop: 48,
-    paddingVertical: 10,
-    color: "#333333",
-    textAlign: "center",
-    fontSize: 26,
-    fontWeight: "bold",
+  regularText: {
+    fontSize: 24,
+    padding: 20,
+    marginVertical: 8,
+    color: '#EDEFEE',
+    textAlign: 'center',
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 20,
   },
 });
-
-export default WelcomeScreen;
