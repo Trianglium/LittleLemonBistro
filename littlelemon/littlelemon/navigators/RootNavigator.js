@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import SubscribeScreen from "../screens/SubscribeScreen";
 import AboutScreen from '../screens/AboutScreen';
+import LoginScreen from "../screens/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,15 @@ const RootNavigator = () => {
         <Stack.Screen
         name="About"
         component={AboutScreen}
+        options={{
+          headerStyle: {
+            textAlign: 'center'
+        }
+        }}
+        />
+        <Stack.Screen
+        name="Login"
+        component={LoginScreen}
         options={{
           headerStyle: {
             textAlign: 'center'
