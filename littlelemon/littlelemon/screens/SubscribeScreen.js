@@ -31,7 +31,7 @@ export default function SubscribeScreen() {
               ? { filter: 'brightness(100%)' }
               : { filter: 'brightness(150%)' },
         ]}
-        source={require("../assets/little-lemon-logo-grey.png")}
+        source={require("../assets/img/little-lemon-logo.png")}
       />
       </View>
       {isSubscribed && <Text style={[
