@@ -42,19 +42,19 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333333',
+    backgroundColor: '#fff',
   },
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: '#EDEFEE',
+    color: '#000',
     textAlign: 'center',
   },
   regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: '#EDEFEE',
+    color: '#000',
     textAlign: 'center',
   },
   inputBox: {
@@ -71,13 +71,13 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 8,
     margin: 100,
-    backgroundColor: '#EE9972',
-    borderColor: '#EE9972',
+    backgroundColor: '#495E57',
+    borderColor: '#495E57',
     borderWidth: 2,
     borderRadius: 50,
   },
   buttonText: {
-    color: 'black',
+    color: '#fff',
     textAlign: 'center',
     fontSize: 25,
   },
