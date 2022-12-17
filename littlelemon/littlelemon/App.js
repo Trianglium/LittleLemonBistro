@@ -1,8 +1,9 @@
 import { View, StyleSheet } from 'react-native';
 import LittleLemonHeader from './components/LittleLemonHeader';
 import LittleLemonFooter from './components/LittleLemonFooter';
-import WelcomeScreen from './WelcomeScreen';
-import LoginScreen from './LoginScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import SubscribeScreen from './screens/SubscribeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -17,6 +18,7 @@ export default function App() {
           <Drawer.Navigator useLegacyImplementation initialRouteName="Login">
             <Drawer.Screen name="Welcome" component={WelcomeScreen} />
             <Drawer.Screen name="Login" component={LoginScreen} />
+            <Drawer.Screen name="Subscribe" component={SubscribeScreen} />
           </Drawer.Navigator>
         </View>
         <View style={styles.footerContainer}>
@@ -30,7 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333333',
+    backgroundColor: '#fff',
   },
-  footerContainer: { backgroundColor: '#333333' },
+  footerContainer: { backgroundColor: '#fff' },
 });
