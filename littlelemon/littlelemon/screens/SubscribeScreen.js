@@ -31,7 +31,7 @@ export default function SubscribeScreen() {
               ? { filter: 'brightness(100%)' }
               : { filter: 'brightness(150%)' },
         ]}
-        source={require("../assets/img/little-lemon-logo.png")}
+        source={require('../assets/img/logo.png')}
       />
       </View>
       {isSubscribed && <Text style={[
@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'black',
     textAlign: 'center',
-    fontWeight: "bold",
   },
   regularText: {
     fontSize: 24,
@@ -120,6 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#495E57',
     borderColor: '#495E57',
     color: '#fff',
+    borderRadius: '25px',
   },
   buttonText: {
     color: 'white',
