@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 18,
   },
 });
 
