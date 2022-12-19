@@ -12,9 +12,29 @@ export default function LoginScreen({ navigation }) {
   const [password, onChangePassword] = useState('');
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-      <Text style={styles.regularText}>Login to continue </Text>
+    <ScrollView
+      style={[
+        styles.container,
+        colorScheme === 'dark'
+          ? {backgroundColor: '#fff'}
+          : {backgroundColor: '#121212'},
+      ]}>
+      <Text style={[
+        styles.headerText,
+        colorScheme === 'light'
+        ? { color: '#fff' }
+        : { color: '#000' },
+      ]}>
+        Welcome to Little Lemon
+      </Text>
+      <Text style={[
+        styles.regularText,
+        colorScheme === 'light'
+        ? { color: '#fff' }
+        : { color: '#000' },
+      ]}>
+        Login to continue 
+      </Text>
       <TextInput
         style={styles.inputBox}
         value={email}
