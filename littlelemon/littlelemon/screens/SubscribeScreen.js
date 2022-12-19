@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     borderColor: '#495E57',
     color: '#fff',
     borderRadius: '25px',
+    whiteSpace: 'normal',
   },
   buttonText: {
     color: 'white',
